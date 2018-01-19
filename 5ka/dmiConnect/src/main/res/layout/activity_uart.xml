@@ -1,0 +1,186 @@
+<RelativeLayout android:id="@+id/rootLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_background"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.adafruit.bluefruit.le.connect.app.UartActivity">
+
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--     <include layout="@layout/layout_uart_singleline_controls"/> -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/sensor0"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#003636"
+                android:textColor="#f3f3f3"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:cursorVisible="false"/>
+
+            <EditText
+                android:id="@+id/angleData"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#BC3200"
+                android:textColor="#f3f3f3"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:cursorVisible="false"/>
+
+            <EditText
+                android:id="@+id/sensor1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#003636"
+                android:textColor="#f3f3f3"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:cursorVisible="false"/>
+
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/resetBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickReset"
+                android:text="Reset"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/default_background"
+        android:layout_below="@id/viewData"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="#f3f3f3"
+            android:textSize="20dp"
+            android:text="Data Log:"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_background"
+            android:layout_below="@id/viewData"
+            android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/dataLog"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:background="#cccccc"
+            android:gravity="top"
+            android:textSize="10dp"
+            android:scrollbars="vertical"
+            android:inputType="textMultiLine"
+            android:fadeScrollbars="false"
+            android:singleLine="false"/>
+
+            <LinearLayout
+                android:id="@+id/sendLaiyout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/default_background"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/addData"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onClickAddData"
+                    android:text="Add data"/>
+
+                <Button
+                    android:id="@+id/deletelast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onClickDeleteLast"
+                    android:text="Delete Last"/>
+
+                <Button
+                    android:id="@+id/deleteall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onClickDeleteAll"
+                    android:text="Delete all"/>
+
+                <Button
+                    android:id="@+id/export"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onClickExport"
+                    android:text="export"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
